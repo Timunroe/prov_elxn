@@ -1,0 +1,54 @@
+{% extends '_base.html' %}
+{% set page = 'add_entry' %}
+
+{% block body %}
+
+<div class="container py-4 px-md-5">
+    <p class="lead">Source credit is mandatory; include <strong>name</strong> (book, organization) and <strong>link</strong>. 
+    <p>Use the person&#8217;s common given name (&#8216;Vic&#8217;) in the Given Name field below. But include the person&#8217;s full name in the Summary like so  ... Victor Kennedy (Vic) Copps.</p>
+
+    <form action="/add_entry" method="post">
+
+      <div class="form-row">
+        <div class="form-group col-md-4">
+          <label class="font-weight-bold" for="inputGivenName">Given Name:</label>
+          <input type="text" class="form-control" name="inputGivenName" id="inputGivenName" required placeholder="Most known by" group">
+        </div>
+        <div class="form-group col-md-4">
+          <label class="font-weight-bold" for="inputSurname">Surname:</label>
+          <input type="text" class="form-control" name="inputSurname" id="inputSurname" required placeholder="Family name">
+        </div>
+        <div class="form-group col-md-4">
+          <label class="font-weight-bold" for="inputDob">Date of Birth:</label>
+          <input type="text" class="form-control" id="inputDob" name="inputDob" placeholder="MM/DD/YYYY if known">
+      </div>
+      </div>
+        <div class="form-group">
+          <label class="font-weight-bold" for="inputOverline">Overline:</label>
+          <input type="text" class="form-control" name="inputOverline" id="inputOverline" placeholder="Key fact, like 'Hamilton's first mayor' ... if not obvious, leave blank">
+        </div>
+
+      <div class="form-group">
+        <label class="font-weight-bold" for="inputContent">Summary:</label>
+        <textarea class="form-control" id="inputContent" name="inputContent" rows="6"></textarea>
+      </div>
+
+      <div class="form-group">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name="draft" id="draft">
+          <label class="form-check-label text-danger" for="draft">
+            Draft!
+          </label>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+{% if result %}
+  <h4 class="mt-2">Added:</h4>
+  <p>DB id: {{ result[0] }}, {{ result[1] }}</p>
+{% endif %}
+
+</div>
+
+{% endblock %}

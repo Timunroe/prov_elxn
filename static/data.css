@@ -1,0 +1,103 @@
+/*
+> Items that need gutters should have postive horizontal margins
+The containing item for above should have negative margins
+> Last item trick with pseudo: after to keep single item in row
+from growing too much.
+> default width for cards should be max width / # of items
+so 800/3 ~ 250px (round down because of margins)
+
+*/
+
+.pica-cards {
+    /* START flex container rules for children pica-card */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: space-between;
+    /* Container rules for gutters*/
+    margin: 0 -10px 0px -10px;
+}
+
+.pica-cards:after {
+    content: "";
+    flex: 1 1 250px;
+    margin: 0 10px 10px 10px;
+}
+
+.pica-card {
+    /* Flex item rules */
+    flex: 1 1 250px;
+    /* OPTIONAL if treating card content as media object */
+    /* Flex container rules for children pica-card-xxxx */
+    /*  display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;*/
+}
+
+.pica-card-image,
+.pica-card-text {
+    /* Item rules for gutters*/
+    margin: 0 10px 10px 10px;
+    /* OPTIONAL if treating card content as media object */
+    /* Flex item rules */
+    /*  flex: 1 1 200px;*/
+}
+
+.pica-card-text h3 {
+  font-size: 20px;
+  line-height: 1.1;
+}
+
+.pica-card-text p {
+  margin-top: 8px
+  margin-bottom: 8px;
+}
+
+.pica-image-wrapper {
+    /* in conjunction with .pica-image to 
+    limit image to certin width and height
+    but that scales at same ratio
+    */
+    border-radius: .25rem;
+    position: relative;
+    width: 100%;
+    padding:50% 0 0;
+    overflow: hidden;
+    display:inline-block
+}
+
+.pica-image {
+    position:absolute;
+    top:50%;
+    left:50%;
+    max-width:100%;
+    min-width:100%;
+    min-height:100%;
+    width:auto;
+    height:auto;
+    transform:translateX(-50%) translateY(-50%)
+}
+
+.pica-link {
+    text-decoration: none !important;
+    color: #000 !important;
+}
+
+.pica-fade {
+    opacity: 1;
+    transition: opacity .15s ease-in;
+}
+
+.pica-fade:focus,
+.pica-fade:hover {
+    opacity: .5;
+    transition: opacity .15s ease-in;
+}
+
+.pica-fade:active {
+    opacity: .8;
+    transition: opacity .15s ease-out
+}
