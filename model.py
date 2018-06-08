@@ -168,7 +168,7 @@ def get_lineup():
     # for z in published:
     # print(z['title_api'])
     # filter by region
-    lineup['spec'] = [x for x in published if x['region_api'] == ''][:15]
+    lineup['spec'] = [x for x in published if x['region_api'] == ''][:18]
     # print(f"Lineup spec is: {lineup['spec']}")
     # need to insert items from rank list
     for item in rank_list:

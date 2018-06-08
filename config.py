@@ -16,19 +16,19 @@ config = {
     "apis":
         [
             {
-                "url": 'http://api.zuza.com/search/article/default?q=KeywordsAlias:"spec_prov_elxn"&pageIndex=1&location=hamilton&sort=datedesc&pageSize=10startindex=1&endindex=8',
+                "url": 'http://api.zuza.com/search/article/default?q=KeywordsAlias:"spec_prov_elxn"&pageIndex=1&location=hamilton&sort=datedesc&pageSize=5startindex=1&endindex=5',
                 "filter": ["searchResultView"]
             },
             {
-                "url": 'http://api.zuza.com/search/article/default?&category=news&subcategory=provincial-election&pageIndex=1&location=hamilton&sort=datedesc&pageSize=10&startindex=1&endindex=8',
+                "url": 'http://api.zuza.com/search/article/default?&category=news&subcategory=provincial-election&pageIndex=1&location=hamilton&sort=datedesc&pageSize=30&startindex=1&endindex=30',
                 "filter": ["searchResultView"]
             },
             {
-                "url": 'http://api.zuza.com/search/article/default?&category=news&subcategory=provincial-election&pageIndex=1&location=niagara&sort=datedesc&pageSize=20&startindex=1&endindex=20',
+                "url": 'http://api.zuza.com/search/article/default?&category=news&subcategory=provincial-election&pageIndex=1&location=niagara&sort=datedesc&pageSize=12&startindex=1&endindex=12',
                 "filter": ["searchResultView"]
             },
             {
-                "url": 'http://api.zuza.com/search/article/default?&category=news&subcategory=provincial-election&pageIndex=1&location=halton&sort=datedesc&pageSize=10&startindex=1&endindex=10',
+                "url": 'http://api.zuza.com/search/article/default?&category=news&subcategory=provincial-election&pageIndex=1&location=halton&sort=datedesc&pageSize=8&startindex=1&endindex=8',
                 "filter": ["searchResultView"]
             },
     ],
@@ -42,7 +42,7 @@ config = {
                  'value': True
              }
              ),
-            ("source_api", 'contains', "Peterborough",
+            ("source_api", 'contains', "Examiner",
              {
                  'action': 'set_key',
                  'section': 'draft_api',
