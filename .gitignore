@@ -2,3 +2,5 @@ __pycache__
 .DS_Store
 prov_elxn.json
 *.pyc
+*.pyc
+templates/.DS_Store

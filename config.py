@@ -36,31 +36,32 @@ config = {
         [
             # ( key, test, regex, action)
             ("author_api", 'contains', "Kevin Werner",
-             {
-                 'action': 'set_key',
-                 'section': 'draft_api',
-                 'value': True
-             }
+                {
+                    'action': 'set_key',
+                    'section': 'draft_api',
+                    'value': True
+                }
              ),
             ("source_api", 'contains', "Examiner",
-             {
-                 'action': 'set_key',
-                 'section': 'draft_api',
-                 'value': True
-             }
+                {
+                    'action': 'set_key',
+                    'section': 'draft_api',
+                    'value': True
+                }
              ),
             ('site_api', 'contains', r'Niagara|Catharines|Grimsby',
-             {
-                 'action': 'set_key',
-                 'section': 'region_api',
-                 'value': 'niagara'}
+                {
+                    'action': 'set_key',
+                    'section': 'region_api',
+                    'value': 'niagara'
+                }
              ),
             ('site_api', 'contains', r'Burlington|Milton|Oakville|Guelph',
-             {
-                 'action': 'set_key',
-                 'section': 'region_api',
-                 'value': 'halton'
-             }
+                {
+                    'action': 'set_key',
+                    'section': 'region_api',
+                    'value': 'halton'
+                }
              )
     ]
 }
